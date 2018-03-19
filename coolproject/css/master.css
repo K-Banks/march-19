@@ -1,0 +1,37 @@
+//Step 1
+if (step === "fox"){
+  alert("You have taken the fox to the other island. The chicken has eaten the grain! Refresh the page to restart.");
+  step = "done";
+}
+if (step === "grain"){
+  alert("You have taken the grain to the other island. The fox has eaten the chicken! Refresh the page to restart.");
+  step = "done";
+}
+if (step === "chicken"){
+  step = prompt("You have brought the chicken to the other island. The fox and the grain remain at the starting point. What will you take on the return trip? (Nothing or chicken)")
+}
+//End Step 1
+
+// Step 2
+if (step === "fox"){
+  alert("You have taken the fox to the other island. The chicken has eaten the grain! Refresh the page to restart.");
+  step = "done";
+}
+if (step === "grain"){
+  alert("You have taken the grain to the other island. The fox has eaten the chicken! Refresh the page to restart.");
+  step = "done";
+}
+if (step === "chicken"){
+  step = prompt("You have brought the chicken to the other island. The fox and the grain remain at the starting point. What will you take on the return trip? (Nothing or chicken)")
+}
+if (step === "Nothing"){
+  step = prompt("You have brought the chicken to the other island. The fox and the grain remain at the starting point. What will you take on the return trip? (Nothing or chicken)")
+}
+//End Step 2
+
+if (step === "done") {
+  alert("Please refresh page to restart. Don't suck next time.")
+}
+if (step !== "chicken", "grain", "fox") {
+  alert("Stop being an idiot.")
+}
