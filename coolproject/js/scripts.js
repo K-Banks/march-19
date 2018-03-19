@@ -20,8 +20,8 @@ while ((fox !== "end") && (grain !== "end") && (chicken !== "end") && (trouble<5
 
 // comment with while condition: step !== "fox", "chicken", "grain", "nothing", "quit"
 
-  while (step !== "fox" || step !== "grain") {
-    prompt("That response is dumb. Please enter: fox, chicken, grain, or nothing");
+  while (step !== "fox" && step !== "grain" && step !== "chicken" && step !== "nothing" && step !== "quit") {
+    step = prompt("That response is dumb. Please enter: fox, chicken, grain, or nothing");
   }
 
   alert("You have chosen to ferry " + step + " across the river.");
