@@ -10,15 +10,12 @@ var trouble = 1;
 
 // comment w/ main win condition: fox !== chicken !== grain !== "end"
 
-while ((fox !== "end") && (grain !== "end") && (chicken !== "end") && (trouble<5) && (step !== "quit")) {
-
-  var objectLocation = "The fox is at: " + fox + "\n The chicken is at: " + chicken + "\n The grain is at: " + grain;
+while (fox !== "end" || grain !== "end" || chicken !== "end" && step !== "quit") {
+  var objectLocation = "The fox is at: " + fox + "\n The chicken is at: " + chicken + "\n The grain is at: " + grain + "\n The boat is at: " + boat;
 
   alert(objectLocation);
 
-  var step = prompt("What will you take across first? Fox, chicken, grain, or nothing?");
-
-// comment with while condition: step !== "fox", "chicken", "grain", "nothing", "quit"
+  var step = prompt("What will you take across to the end? Fox, chicken, grain, or nothing?");
 
   while (step !== "fox" && step !== "grain" && step !== "chicken" && step !== "nothing" && step !== "quit") {
     step = prompt("That response is dumb. Please enter: fox, chicken, grain, or nothing");
@@ -27,17 +24,35 @@ while ((fox !== "end") && (grain !== "end") && (chicken !== "end") && (trouble<5
   alert("You have chosen to ferry " + step + " across the river.");
 
   if (step === "fox") {
-    fox = "boat";
-
+    fox = "end";
   }
 
   if (step === "chicken") {
-
+    chicken = "end";
   }
-  if (boat == "start") {
-    boat = "end";
-  } else {
-    boat = "start";
+
+  if (step === "grain") {
+    grain = "end";
+  }
+
+  var step = prompt("What will you take back across to the start? Fox, chicken, grain, or nothing?");
+
+  while (step !== "fox" && step !== "grain" && step !== "chicken" && step !== "nothing" && step !== "quit") {
+    step = prompt("That response is dumb. Please enter: fox, chicken, grain, or nothing");
+  }
+
+  alert("You have chosen to ferry " + step + " across the river.");
+
+  if (step === "fox") {
+    fox = "start";
+  }
+
+  if (step === "chicken") {
+    chicken = "start";
+  }
+
+  if (step === "grain") {
+    grain = "start";
   }
 
  if (fox === chicken) {
@@ -48,5 +63,8 @@ while ((fox !== "end") && (grain !== "end") && (chicken !== "end") && (trouble<5
  if (chicken === grain) {
    alert("you lose. chicken ate the grain");
    step = "quit";
+ }
+ else {
+   alert ("you win!!!");
  }
 }
